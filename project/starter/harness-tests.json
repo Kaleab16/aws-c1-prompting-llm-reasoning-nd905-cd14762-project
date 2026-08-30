@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "id": "platform_return_policy",
+      "prompt": "What is your return policy?",
+      "expected": "The assistant should answer using the FAQ and explain that most items can be returned within 30 days of delivery if unused and in original packaging, unless the item arrived defective."
+    },
+    {
+      "id": "platform_password_reset",
+      "prompt": "I forgot my password. How do I reset it?",
+      "expected": "The assistant should answer using the FAQ and explain that the customer should use the Forgot password link on the sign-in page and will receive a reset email if the email address matches an account."
+    },
+    {
+      "id": "bug_missing_steps",
+      "prompt": "The checkout button doesn't work.",
+      "expected": "The assistant should classify this as a bug report but must not create a ticket. It should ask the customer for the steps to reproduce the issue, one missing piece at a time."
+    },
+    {
+      "id": "bug_missing_environment",
+      "prompt": "The checkout button is broken. To reproduce it, add an item to the cart, open checkout, and click the Checkout button. Nothing happens.",
+      "expected": "The assistant should recognize that the bug description and reproduction steps are provided but the environment is missing. It should ask for the customer's browser, operating system, and device before creating a ticket."
+    },
+    {
+      "id": "bug_complete",
+      "prompt": "The checkout button is broken. To reproduce it, add an item to the cart, open checkout, and click the Checkout button. Nothing happens. I'm using Chrome on Windows 11 on a laptop.",
+      "expected": "The assistant should create a bug report using the provided description, reproduction steps, and environment, then return the generated ticket ID and explain that engineering will follow up."
+    },
+    {
+      "id": "other_movie",
+      "prompt": "Can you recommend a movie for me?",
+      "expected": "The assistant should explain that it cannot help with this request and refer the customer to the human support line at 1-800-555-0199 (Mon-Fri)."
+    }
+  ]
+}
